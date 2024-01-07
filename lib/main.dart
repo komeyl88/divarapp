@@ -46,8 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   hintText: 'جستجو در همه آگهی ها',
                   border: OutlineInputBorder(),
                 ),
-                onChanged: (value) {
-                },
+                onChanged: (value) {},
               ),
             ),
           ),
@@ -70,7 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                       'لوازم الکترونیکی',
                       style: TextStyle(fontSize: 14.0, color: Colors.black54),
-
                     ),
                   ],
                 ),
@@ -81,8 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.grey,
                       size: 33.0,
                     ),
-
-                    Text('وسایل نقلیه', style: TextStyle(fontSize: 14.0, color: Colors.black54)),
+                    Text('وسایل نقلیه',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -92,7 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.grey,
                       size: 33.0,
                     ),
-                    Text('املاک', style: TextStyle(fontSize: 14.0, color: Colors.black54)),
+                    Text('املاک',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -102,7 +103,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.grey,
                       size: 33.0,
                     ),
-                    Text('مربوط به خانه ', style: TextStyle(fontSize: 14.0, color: Colors.black54)),
+                    Text('مربوط به خانه ',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -112,12 +115,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.grey,
                       size: 33.0,
                     ),
-                    Text('موبایل', style: TextStyle(fontSize: 14.0, color: Colors.black54)),
+                    Text('موبایل',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
               ],
             ),
-            Divider(color: Colors.black,),
+            Divider(
+              color: Colors.black,
+            ),
             ABD(),
             Divider(
               color: Colors.black,
@@ -131,7 +138,6 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.black,
             ),
             ABF(),
-
           ],
         ),
       ),
@@ -140,25 +146,38 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _currentIndex,
         items: [
           const BottomNavigationBarItem(
-            icon: Icon(Icons.person,color: Colors.blue,),
+            icon: Icon(
+              Icons.person,
+              color: Colors.blue,
+            ),
             label: 'دیوار من ',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.chat,color: Colors.blue,),
+            icon: Icon(
+              Icons.chat,
+              color: Colors.blue,
+            ),
             label: 'چت',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_sharp,color: Colors.blue,),
+            icon: Icon(
+              Icons.add_circle_sharp,
+              color: Colors.blue,
+            ),
             label: 'ثبت آگهی ',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.list_sharp,color: Colors.blue,),
+            icon: Icon(
+              Icons.list_sharp,
+              color: Colors.blue,
+            ),
             label: 'دسته ها ',
           ),
           BottomNavigationBarItem(
-            icon: Image.network("https://static.iapps.ir/apps/file/image/dcbe283a-a687-4416-a06d-c9ee0e64df85-a2838f7c-6f9a-41ba-9126-71e43309f471/250x250.jpg?key=Ndu5E2g4BVBJVAwsDk82jSeThSw6CcKq",),
+            icon: Image.network(
+              "https://static.iapps.ir/apps/file/image/dcbe283a-a687-4416-a06d-c9ee0e64df85-a2838f7c-6f9a-41ba-9126-71e43309f471/250x250.jpg?key=Ndu5E2g4BVBJVAwsDk82jSeThSw6CcKq",
+            ),
             label: 'آگهی ها',
-
           ),
         ],
         onTap: (index) {
@@ -171,10 +190,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
 void main() {
   runApp(const MyApp());
 }
+
 class ABD extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -222,7 +241,6 @@ class ABD extends StatelessWidget {
   }
 }
 
-
 class ABC extends StatelessWidget {
   const ABC({super.key});
 
@@ -251,7 +269,10 @@ class ABC extends StatelessWidget {
                 children: [
                   Text(
                     'صندلی 601 ویتسو',
-                    style: TextStyle(fontSize: 20.0, color: Colors.black87, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
                   Text(' 2.400.000 تومان'),
@@ -267,7 +288,6 @@ class ABC extends StatelessWidget {
 }
 
 class ABE extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -293,7 +313,10 @@ class ABE extends StatelessWidget {
                 children: [
                   Text(
                     'ونک دو خوابه  ',
-                    style: TextStyle(fontSize: 20.0, color: Colors.black87, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
                   Text('وعدیه: 200.000.000 تومان'),
@@ -308,6 +331,7 @@ class ABE extends StatelessWidget {
     );
   }
 }
+
 class ABF extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -334,7 +358,10 @@ class ABF extends StatelessWidget {
                 children: [
                   Text(
                     'زعفرانیه 140 متری ',
-                    style: TextStyle(fontSize: 20.0, color: Colors.black87, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
                   Text('وعدیه: 200.000.000 تومان'),
