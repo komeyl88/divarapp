@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.chat,
               color: Colors.blue,
             ),
-            label: 'چت',
+            label: 'چت ها ',
           ),
           const BottomNavigationBarItem(
             icon: Icon(
