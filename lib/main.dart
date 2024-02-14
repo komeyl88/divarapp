@@ -2,55 +2,74 @@ import 'package:flutter/material.dart';
 
 import 'clases.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'divar',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ورود'),
       ),
-      home: loginpage(),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              controller: emailController,
+              decoration: InputDecoration(
+                labelText: 'ایمیل',
+                prefixIcon: Icon(Icons.email),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              controller: passwordController,
+              decoration: InputDecoration(
+                labelText: 'رمز عبور',
+                prefixIcon: Icon(Icons.lock),
+              ),
+              obscureText: true,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // اینجا می‌توانید منطق لاگین را پیاده‌سازی کنید
+                // مثلا می‌توانید اطلاعات وارد شده را بررسی کنید و به صفحه اصلی هدایت کنید
+
+                // انتقال به صفحه اصلی
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                );
+              },
+              child: Text('ورود'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
-class loginpage extends StatefulWidget {
+void main() {
+  runApp(MyApp());
+}
 
+class MyApp extends StatelessWidget {
   @override
-  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
-
-  Widget LoginUI() {
-    return Stack(
-      children: [
-        Padding(padding: EdgeInsets.only(left: 20, right: 80),
-          child: Text("signin", style: TextStyle(
-              fontFamily: "varela", fontSize: 50, color: Colors.grey[500]),),
-        )
-        Center(
-          child: Padding(padding: EdgeInsets.only(left: 50, right: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Material(
-                  child: TextField(
-                    decoration: InputDecoration(border: InputBorder.none),),
-                  elevation: 20,
-                  borderRadius: BorderRadius.circular(40),
-                )
-              ],
-            ),),
-        )
-      ],
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: LoginPage(),
     );
   }
 }
-
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -223,9 +242,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-void main() {
-  runApp(const MyApp());
-}
 
 class ABD extends StatelessWidget {
   @override
