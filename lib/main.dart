@@ -36,10 +36,6 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // اینجا می‌توانید منطق لاگین را پیاده‌سازی کنید
-                // مثلا می‌توانید اطلاعات وارد شده را بررسی کنید و به صفحه اصلی هدایت کنید
-
-                // انتقال به صفحه اصلی
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => MyHomePage()),
