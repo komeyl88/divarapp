@@ -8,15 +8,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'divar',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: loginpage(),
     );
   }
 }
+
+class loginpage extends StatefulWidget {
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+
+  Widget LoginUI() {
+    return Stack(
+      children: [
+        Padding(padding: EdgeInsets.only(left: 20, right: 80),
+          child: Text("signin", style: TextStyle(
+              fontFamily: "varela", fontSize: 50, color: Colors.grey[500]),),
+        )
+        Center(
+          child: Padding(padding: EdgeInsets.only(left: 50, right: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Material(
+                  child: TextField(
+                    decoration: InputDecoration(border: InputBorder.none),),
+                  elevation: 20,
+                  borderRadius: BorderRadius.circular(40),
+                )
+              ],
+            ),),
+        )
+      ],
+    );
+  }
+}
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -81,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('وسایل نقلیه',
                         style:
-                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                        TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -93,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('املاک',
                         style:
-                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                        TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -105,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('مربوط به خانه ',
                         style:
-                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                        TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -117,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('موبایل',
                         style:
-                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                        TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
               ],
