@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: TextField(
                 controller: _searchController,
                 decoration: const InputDecoration(
-                  hintText: 'جستجو در همه آگهی ها',
+                  hintText: 'جستجو در  آگهی ها',
                   border: OutlineInputBorder(),
                 ),
                 onChanged: (value) {},
