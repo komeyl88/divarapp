@@ -1,10 +1,6 @@
-import 'package:divarapp/Category%20list.dart';
 import 'package:flutter/material.dart';
 
 import 'clases.dart';
-
-void main() {
-}
 
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -22,10 +18,7 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                labelText: 'ایمیل',
-                prefixIcon: Icon(Icons.email),
+              decoration: InputDecoration(border: InputBorder.none,
               ),
             ),
             SizedBox(height: 20),
@@ -54,6 +47,22 @@ class LoginPage extends StatelessWidget {
   }
 }
 
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: LoginPage(),
+    );
+  }
+}
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -90,16 +99,89 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            CategoryList(),
-            Divider(color: Colors.black),
+        child: ListView(
+          children: <Widget>[
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Icon(
+                      Icons.cell_tower,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text(
+                      'لوازم الکترونیکی',
+                      style: TextStyle(fontSize: 14.0, color: Colors.black54),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.car_repair_sharp,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('وسایل نقلیه',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.house,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('املاک',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.other_houses,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('مربوط به خانه ',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.phone_android_rounded,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('موبایل',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+              ],
+            ),
+            Divider(
+              color: Colors.black,
+            ),
             ABD(),
-            Divider(color: Colors.black),
+            Divider(
+              color: Colors.black,
+            ),
             ABC(),
-            Divider(color: Colors.black),
+            Divider(
+              color: Colors.black,
+            ),
             ABE(),
-            Divider(color: Colors.black),
+            Divider(
+              color: Colors.black,
+            ),
             ABF(),
           ],
         ),
@@ -152,6 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
 
 class ABD extends StatelessWidget {
   @override
