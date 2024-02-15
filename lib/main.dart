@@ -1,55 +1,19 @@
-import 'package:divarapp/Category%20list.dart';
 import 'package:flutter/material.dart';
 
 import 'clases.dart';
 
-void main() {
-}
-
-class LoginPage extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ورود'),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                labelText: 'ایمیل',
-                prefixIcon: Icon(Icons.email),
-              ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: passwordController,
-              decoration: InputDecoration(
-                labelText: 'رمز عبور',
-                prefixIcon: Icon(Icons.lock),
-              ),
-              obscureText: true,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
-                );
-              },
-              child: Text('ورود'),
-            ),
-          ],
-        ),
-      ),
+      home: MyHomePage(),
     );
   }
 }
@@ -90,16 +54,89 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            CategoryList(),
-            Divider(color: Colors.black),
+        child: ListView(
+          children: <Widget>[
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Icon(
+                      Icons.cell_tower,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text(
+                      'لوازم الکترونیکی',
+                      style: TextStyle(fontSize: 14.0, color: Colors.black54),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.car_repair_sharp,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('وسایل نقلیه',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.house,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('املاک',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.other_houses,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('مربوط به خانه ',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Icon(
+                      Icons.phone_android_rounded,
+                      color: Colors.grey,
+                      size: 33.0,
+                    ),
+                    Text('موبایل',
+                        style:
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
+                  ],
+                ),
+              ],
+            ),
+            Divider(
+              color: Colors.black,
+            ),
             ABD(),
-            Divider(color: Colors.black),
+            Divider(
+              color: Colors.black,
+            ),
             ABC(),
-            Divider(color: Colors.black),
+            Divider(
+              color: Colors.black,
+            ),
             ABE(),
-            Divider(color: Colors.black),
+            Divider(
+              color: Colors.black,
+            ),
             ABF(),
           ],
         ),
@@ -151,6 +188,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+void main() {
+  runApp(const MyApp());
 }
 
 class ABD extends StatelessWidget {
