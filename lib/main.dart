@@ -1,49 +1,88 @@
 import 'package:flutter/material.dart';
-
 import 'clases.dart';
 
-class LoginPage extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+class LoginForm extends StatelessWidget {
+  const LoginForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('ورود'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: emailController,
-              decoration: InputDecoration(
-                labelText: 'ایمیل',
-                prefixIcon: Icon(Icons.email),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            width: 300.0,
+            padding: const EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+              image: DecorationImage(
+                image: const NetworkImage(
+                  'https://i2.wp.com/files.123freevectors.com/wp-content/original/174151-blue-blur-background.jpg?w=420',
+                ),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.9),
+                  BlendMode.dstATop,
+                ),
               ),
             ),
-            SizedBox(height: 20),
-            TextField(
-              controller: passwordController,
-              decoration: InputDecoration(
-                labelText: 'رمز عبور',
-                prefixIcon: Icon(Icons.lock),
-              ),
-              obscureText: true,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(height: 20.0),
+                const Text(
+                  'divar',
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                const Text(
+                  "Welcome to Divar App",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your username',
+                    labelText: 'Username',
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                TextFormField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your password',
+                    labelText: 'Password',
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
+                    );
+                  },
+                  child: const Text('Login'),
+                ),
+              ],
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
-                );
-              },
-              child: Text('ورود'),
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -62,10 +101,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: LoginPage(),
+      home: const LoginForm(),
     );
   }
 }
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -75,7 +115,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   get decoration => null;
 
@@ -129,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('وسایل نقلیه',
                         style:
-                        TextStyle(fontSize: 14.0, color: Colors.black54)),
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -141,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('املاک',
                         style:
-                        TextStyle(fontSize: 14.0, color: Colors.black54)),
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -153,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('مربوط به خانه ',
                         style:
-                        TextStyle(fontSize: 14.0, color: Colors.black54)),
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
                 Column(
@@ -165,24 +205,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text('موبایل',
                         style:
-                        TextStyle(fontSize: 14.0, color: Colors.black54)),
+                            TextStyle(fontSize: 14.0, color: Colors.black54)),
                   ],
                 ),
               ],
             ),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
             ABD(),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
-            ABC(),
-            Divider(
+            const ABC(),
+            const Divider(
               color: Colors.black,
             ),
             ABE(),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
             ABF(),
@@ -238,8 +278,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
 class ABD extends StatelessWidget {
+  const ABD({super.key});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -378,6 +419,8 @@ class ABE extends StatelessWidget {
 }
 
 class ABF extends StatelessWidget {
+  const ABF({super.key});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
