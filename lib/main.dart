@@ -1,6 +1,5 @@
+import 'package:divarapp/postdetail/posts.dart';
 import 'package:flutter/material.dart';
-import 'clases.dart';
-
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
 
