@@ -1,5 +1,7 @@
 import 'package:divarapp/postdetail/posts.dart';
+import 'package:divarapp/profilepage.dart';
 import 'package:flutter/material.dart';
+
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
 
@@ -232,28 +234,28 @@ class _MyHomePageState extends State<MyHomePage> {
         fixedColor: Colors.blue,
         currentIndex: _currentIndex,
         items: [
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               Icons.person,
               color: Colors.blue,
             ),
             label: 'دیوار من ',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               Icons.chat,
               color: Colors.blue,
             ),
             label: 'چت ها ',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               Icons.add_circle_sharp,
               color: Colors.blue,
             ),
             label: 'ثبت آگهی ',
           ),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
               Icons.list_sharp,
               color: Colors.blue,
@@ -270,6 +272,12 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
+            if (index == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
+            }
           });
         },
       ),
